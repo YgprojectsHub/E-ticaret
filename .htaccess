@@ -1,0 +1,25 @@
+RewriteEngine On 
+ErrorDocument 404 /404.php
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+ 
+RewriteRule ^cart(/?)$ cart.php [NC]
+RewriteRule ^log-out(/?)$ logout.php [NC]
+RewriteRule ^my-account(/?)$ account.php [NC]
+RewriteRule ^checkout(/?)$ checkout.php [NC]
+RewriteRule ^contact-us(/?)$ contact.php [NC]
+RewriteRule ^login-register(/?)$ login.php [NC]
+RewriteRule ^profile(/?)$ profile.php [NC]
+
+RewriteRule ^password-recovery(/?)$ passwordrecovery.php [NC]
+RewriteRule ^recovery-password/([0-9a-zA-Z-_]+)(/?)$ recoverypassword.php?code=$1 [L]
+
+RewriteRule ^thank-you(/?)$ thankyou.php [NC]
+RewriteRule ^order-complete(/?)$ completed.php [NC]
+
+RewriteRule ^category/([0-9a-zA-Z-_]+)/s/(.*)(/?)$ category.php?catsef=$1&s=$2 [L]
+RewriteRule ^product/([0-9a-zA-Z-_]+)(/?)$  product.php?productsef=$1 [L]
+RewriteRule ^category/([0-9a-zA-Z-_]+)(/?)$ category.php?catsef=$1 [L]
+RewriteRule ^page/([0-9a-zA-Z-_]+)(/?)$ page.php?pagesef=$1 [L]
